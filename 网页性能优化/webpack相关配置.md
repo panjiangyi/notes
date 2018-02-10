@@ -57,3 +57,7 @@ define(["/libraries/react.min.js", "/libraries/react-dom.min.js"], function () {
 ```
 >注：使用externals之后，必须import externals的键，否则webpack不认识，会按正常流程打包该模块。
 - 常用工具库简化配置https://github.com/GoogleChromeLabs/webpack-libs-optimizations
+-  webpack runtime代码很少，可以内联到html中减少http请求。
+> 1. 如果用**HtmlWebpackPlugin**生成HTML，可使用  **InlineChunkWebpackPlugin**插件。2. 如果由服务端生成HTML，**CommonsChunkPlugin**生成的runtime文件，自行添加到HTML中。
+
+  

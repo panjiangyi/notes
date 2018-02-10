@@ -9,3 +9,4 @@ https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-bu
 8.  @font-face 
 9.  html上的role属性
 10. fetch 、promise
+11. 最佳缓存策略https://jakearchibald.com/2016/caching-best-practices/
