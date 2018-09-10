@@ -105,3 +105,8 @@
    > 提交前rebase到主分支并解决冲突，这样其他人可以fast-forward
 - git merge
     1. --squash 合并分支，但在丢弃被合并分支的变更集
+- git format-patch
+    >生成补丁文件，用来通过邮件发送本地改动
+- git apply
+    >应用补丁文件
+    1. --check 检查补丁文件是否有效
