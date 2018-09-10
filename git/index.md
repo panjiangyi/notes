@@ -64,5 +64,8 @@
     3. git checkout -b &lt;branchname&gt; &lt;tagname&gt;
 - checkout
     >工作区和暂存区没提交干净时，不能切换分支。除非目标分支和当前分支处于同一节点
-
-   
+- branch
+   1. -v 显示每个分支的最后一次提交
+   2. --no-merged 查看所有还没合并的分支
+- ls-remote
+    > 显示远程仓库信息
