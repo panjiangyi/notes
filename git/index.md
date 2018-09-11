@@ -89,7 +89,6 @@
     7.  --all-match 此命令使结果必须满足多个限制条件，否则满足一个即可
     8.  --no-merges  有些提交时合并而来，不显示这些节点，历史信息更清晰
     9.  &lt;branch A&gt;...&lt;branch b&gt;, 或branchB --not branchA 显示属于branch b 单不属于branch a的commit
-    10. 
 - git tag
     > 列出所有标签
     1. -l
