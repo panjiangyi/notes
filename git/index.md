@@ -1,7 +1,8 @@
 - git diff
     > 对比工作去和暂存区的区别
     1. --cached, --staged对比暂存区和已commit的区别
-   2. --check，它将会找到可能的空白错误（多余的空格，换行等）并将它们为你列出来。
+    2. --check，它将会找到可能的空白错误（多余的空格，换行等）并将它们为你列出来。
+    3. a...b, 列出b分支在ab公共祖先节点之后，更新了什么
      
 - git difftool
     > 修改的摘要（50 个字符或更少）
@@ -92,10 +93,11 @@
 - git tag
     > 列出所有标签
     1. -l
-    > git tag-l 'v1.8.5' 列出名字v1.8.5开头的标签
-    >-a &lt;tag name&gt; &lt;commit hash&gt; 创建附注标签
+    > git tag -l 'v1.8.5' 列出名字v1.8.5开头的标签
+    > -a &lt;tag name&gt; &lt;commit hash&gt; 创建附注标签
     2. git push --tags 把标签也一并上传
     3. git checkout -b &lt;branchname&gt; &lt;tagname&gt;
+    4. git show [tag] 显示tag信息
 - checkout
     >工作区和暂存区没提交干净时，不能切换分支。除非目标分支和当前分支处于同一节点
 - branch
@@ -117,3 +119,14 @@
     1. --check 检查补丁文件是否有效
 - git pull
     1. [url] 一次性的拉去，而不会被设定成默认远程分支
+- git merge-base a b
+    > 找到a分支和b分支的公共祖先
+- git cherry-pick &lt;hash&lt;
+    >把hash代表的提交应用到当前分支
+- git rerere
+    >一种简化冲突解决的方法。当启用 rerere 时，Git 将会维护一些成功合并之前和之后的镜像，当 Git 发现之前已经修复过类似的冲突 时，便会使用之前的修复方案，而不需要你的干预。
+
+    >这个功能包含两个部分：一个配置选项和一个命令，可以在全局配置中开启
+    >git config --global rerere.enabled true
+- git shortlog
+    > 快速生成一份包含从上次发布之后项目新增内容的修改日志（changelog）类文档
