@@ -57,11 +57,12 @@
     1. -p 显示每次提交的内容的差异
     2. -n 显示n条记录
     3. --stat 简洁信息
-    4. --pretty=oneline;
-    5. --pretty=short;
-    6. --pretty=full;
-    7. --pretty=fuller;
-    8. --pretty=format:"模板";
+    4. --abbrev-commit 显示简单唯一SHA-1值，默认七个字符，如果有重复会增加长度
+    5. --pretty=oneline;
+    6. --pretty=short;
+    7. --pretty=full;
+    8. --pretty=fuller;
+    9. --pretty=format:"模板";
         | 选项 | 说明                                      |
         | ---- | ----------------------------------------- |
         | %H   | commit的完整哈希字串                      |
@@ -80,15 +81,16 @@
         | %cr  | 提交日期，按多久以前的方式显示            |
         | %s   | 提交说明                                  |
         > 注：作者是写代码的人，提交者是把代码合并到项目的人
-    1.  --graph， 图形化显示分支，合并历史
-    2.  --since --after --before --until 设定起止时间
-    3.  --author 指定作者
-    4.  --committer 指定提交者
-    5.  --grep 指定说明关键字
-    6.  -S 指定代码关键字
-    7.  --all-match 此命令使结果必须满足多个限制条件，否则满足一个即可
-    8.  --no-merges  有些提交时合并而来，不显示这些节点，历史信息更清晰
-    9.  &lt;branch A&gt;...&lt;branch b&gt; 显示属于branch b 单不属于branch a的commit
+    10. --graph， 图形化显示分支，合并历史
+    11. --since --after --before --until 设定起止时间
+    12. --author 指定作者
+    13. --committer 指定提交者
+    14. --grep 指定说明关键字
+    15. -S 指定代码关键字
+    16. --all-match 此命令使结果必须满足多个限制条件，否则满足一个即可
+    17. --no-merges  有些提交时合并而来，不显示这些节点，历史信息更清晰
+    18. &lt;branch A&gt;...&lt;branch b&gt; 显示属于branch b 单不属于branch a的commit
+    19. [branch] 显示在指定分支上HEAD的引用日志
 - git tag
     > 列出所有标签
     1. -l
@@ -117,3 +119,15 @@
     1. --check 检查补丁文件是否有效
 - git pull
     1. [url] 一次性的拉去，而不会被设定成默认远程分支
+- git rev-parse branchName
+    > 查看分支最后一个提交的hash
+- git reflog
+  > 查看HEAD的引用日志
+- git show
+  1. HEAD@{N} 查看HEAD倒数第N次指向那个提交
+  2. master@{yesterday} 查看昨天master处于哪个提交
+- 祖先引用
+  1. 在引用的末尾加一个^，则指向上一个引用。
+  2. 在引用末尾加~n,指向第n个引用
+    >0指向当前引用，1指向上一个，2指向上上个，以此类推
+    >重复n次^效果相同
