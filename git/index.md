@@ -1,7 +1,8 @@
 - git diff
     > 对比工作去和暂存区的区别
     1. --cached, --staged对比暂存区和已commit的区别
-   2. --check，它将会找到可能的空白错误（多余的空格，换行等）并将它们为你列出来。
+    2. --check，它将会找到可能的空白错误（多余的空格，换行等）并将它们为你列出来。
+    3. a...b, 列出b分支在ab公共祖先节点之后，更新了什么
      
 - git difftool
     > 修改的摘要（50 个字符或更少）
@@ -89,15 +90,16 @@
     15. -S 指定代码关键字
     16. --all-match 此命令使结果必须满足多个限制条件，否则满足一个即可
     17. --no-merges  有些提交时合并而来，不显示这些节点，历史信息更清晰
-    18. &lt;branch A&gt;...&lt;branch b&gt; 显示属于branch b 单不属于branch a的commit
     19. [branch] 显示在指定分支上HEAD的引用日志
+    20.  &lt;branch A&gt;...&lt;branch b&gt;, 或branchB --not branchA 显示属于branch b 单不属于branch a的commit
 - git tag
     > 列出所有标签
     1. -l
-    > git tag-l 'v1.8.5' 列出名字v1.8.5开头的标签
-    >-a &lt;tag name&gt; &lt;commit hash&gt; 创建附注标签
+    > git tag -l 'v1.8.5' 列出名字v1.8.5开头的标签
+    > -a &lt;tag name&gt; &lt;commit hash&gt; 创建附注标签
     2. git push --tags 把标签也一并上传
     3. git checkout -b &lt;branchname&gt; &lt;tagname&gt;
+    4. git show [tag] 显示tag信息
 - checkout
     >工作区和暂存区没提交干净时，不能切换分支。除非目标分支和当前分支处于同一节点
 - branch
@@ -131,3 +133,14 @@
   2. 在引用末尾加~n,指向第n个引用
     >0指向当前引用，1指向上一个，2指向上上个，以此类推
     >重复n次^效果相同
+- git merge-base a b
+    > 找到a分支和b分支的公共祖先
+- git cherry-pick &lt;hash&lt;
+    >把hash代表的提交应用到当前分支
+- git rerere
+    >一种简化冲突解决的方法。当启用 rerere 时，Git 将会维护一些成功合并之前和之后的镜像，当 Git 发现之前已经修复过类似的冲突 时，便会使用之前的修复方案，而不需要你的干预。
+
+    >这个功能包含两个部分：一个配置选项和一个命令，可以在全局配置中开启
+    >git config --global rerere.enabled true
+- git shortlog
+    > 快速生成一份包含从上次发布之后项目新增内容的修改日志（changelog）类文档
