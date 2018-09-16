@@ -3,7 +3,7 @@
     1. --cached, --staged对比暂存区和已commit的区别
     2. --check，它将会找到可能的空白错误（多余的空格，换行等）并将它们为你列出来。
     3. a...b, 列出b分支在ab公共祖先节点之后，更新了什么
-     
+    4. -b 不对比空格
 - git difftool
     > 修改的摘要（50 个字符或更少）
 如果必要的话，加入更详细的解释文字。在
@@ -92,7 +92,7 @@
     16. --all-match 此命令使结果必须满足多个限制条件，否则满足一个即可
     17. --no-merges  有些提交时合并而来，不显示这些节点，历史信息更清晰
     19. [branch] 显示在指定分支上HEAD的引用日志
-    20.  &lt;branch A&gt;...&lt;branch b&gt;, 或branchB --not branchA 显示属于branch b 单不属于branch a的commit
+    20.  &lt;branch A&gt;...&lt;branch b&gt;, 或branchB --not branchA 显示属于branch b 但不属于branch a的commit
 - git tag
     > 列出所有标签
     1. -l
