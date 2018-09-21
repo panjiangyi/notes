@@ -28,3 +28,15 @@
   >提交对象保存快照的各项信息：校验和，提交者，时间等等
   1. echo 'first commit' | git commit-tree 树校验和。 保存一个树对象的信息到一个提交对象中;
   2. echo commit message | git commit-tree 树校验和 -p 提交对象, 保存树为提交对象，并连接至上一个提交对象
+- 打包
+  >文件新加入git库时，git会完整保存文件的各个版本。
+  >当push或手动执行**git gc**时，git会压缩文件，只保存文件个版本间的差异。
+  - git verify-pack 命令查看打包的内容
+  > git verify-pack -v .git/object/pack/某个文件
+- 协议
+   - 克隆一个库
+   1. 得到info/refs文件,得到HEAD
+   2. 得到HEAD后遍历树对象，然后下载相应git对象
+   3. 若下载不到git对象，说明已被打包
+   4. 下载 objects/info/packs文件获取打包信息，并下载包文件
+   5. 下载完成
