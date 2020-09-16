@@ -1,8 +1,11 @@
+# First of all: Just use typescript, a type system will help v8 optimize our code.
+
 # Golden rules
 
 1. Doing less stuff takes less times.
 1. Doing something later is better than doing it now.
 1. Until the user actually gets the page, there isn't much to optimize.
+   s
 
 # facts
 
@@ -31,3 +34,7 @@ could add marks into performance panel.
 
 - node --trace-opt xxx.js 
   get some information on how v8 optimize this file.
+
+# hidden class
+
+v8 has a type system for js for speeding up js running.
