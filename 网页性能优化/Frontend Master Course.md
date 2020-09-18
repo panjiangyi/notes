@@ -38,3 +38,48 @@ could add marks into performance panel.
 # hidden class
 
 v8 has a type system for js for speeding up js running.
+
+## Reduce the amount of unused css. it's a waste of time of parsing and checking
+
+## Reduce the numbers of styles that effect a given element.
+
+### Change opacity and transform won't trigger repaint
+
+# create layer
+
+>  IMPORTANT: will-change is literally used for element will change, not always changing element.
+>
+> layer reduce repaint, but increase memory.
+
+- will-change suggest browser to create a new layer, but browser may or may not follow our suggestion.
+
+- transform:  translateZ(0). this rule force browser to create a layer instead of suggestion like will-change.
+
+  not that good, because this way intervene the browser's way 
+
+- will-change better be added to element just before it changing.  element will change when be clicked, then add will-change when be hovered.
+
+  eg: 
+
+  ```css
+  
+  .xxx:hover {
+      will-change: transform;
+  }
+  ```
+
+- remove will-change when element do not change any more. eg:
+
+  ```js
+  ele.addEventListener('animationEnd',()=>{
+      ele.style.willChange = "unset";
+  })
+  ```
+
+  
+
+# latency and Bandwidth.
+
+- file size under **14kb**, need just one tcp connection.
+
+  > first painted HTML file size should under 14 kb to show page in one connection.
