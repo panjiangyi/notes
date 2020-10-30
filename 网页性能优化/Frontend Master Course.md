@@ -83,3 +83,11 @@ v8 has a type system for js for speeding up js running.
 - file size under **14kb**, need just one tcp connection.
 
   > first painted HTML file size should under 14 kb to show page in one connection.
+
+# Caching
+
+- Only GET, OPTIONS and HEAD can be cached
+
+# Babel Tax
+
+babel transform little codes to many codes
