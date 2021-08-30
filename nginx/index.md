@@ -5,7 +5,7 @@
 user  nginx;
 # 进程数，和cpu核心数写成一样
 worker_processes  1;
-# 作物日志
+# 错误日志
 error_log  /var/log/nginx/error.log warn;
 pid        /var/run/nginx.pid;
 
@@ -35,7 +35,7 @@ http {
 
     #是否开启gzip
     #gzip  on;
-
+		# 子配置项位置
     include /etc/nginx/conf.d/*.conf;
 }
 
@@ -59,7 +59,7 @@ server {
         #allow 192.11.11.11
     }
 
-    localtion /test {
+    location /test {
 
     }
 
