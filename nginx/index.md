@@ -1,5 +1,6 @@
 1. 配置文件：etc/nginx/nginx.conf
-```conf
+
+```nginx
 # 运行用户
 user  nginx;
 # 进程数，和cpu核心数写成一样
@@ -31,7 +32,7 @@ http {
 
     #超时时间
     keepalive_timeout  65;
-    
+
     #是否开启gzip
     #gzip  on;
 
@@ -41,7 +42,8 @@ http {
 ```
 
 2. 子配置项 /etc/nginx/conf.d/default.conf
-```conf
+
+```nginx
 server {
     listen       80;
     server_name  localhost;
@@ -53,12 +55,12 @@ server {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
         #拒或允许某ip访问
-        #deny 192.11.11.11 
-        #allow 192.11.11.11 
+        #deny 192.11.11.11
+        #allow 192.11.11.11
     }
 
     localtion /test {
-        
+
     }
 
     #error_page  404              /404.html;
@@ -94,7 +96,9 @@ server {
     #}
 }
 ```
+
 3. 启动、关闭、重启
+
 - 启动: 输入命令 nginx
 - 停止: nginx -s quit
 - 立即停止: nginx -s stop
