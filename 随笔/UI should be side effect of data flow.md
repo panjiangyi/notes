@@ -8,7 +8,7 @@ But, for frontend developers, It's almost all our responsibility to wrote UI log
 
 so, What should we do, how can we get rid of this mess coming with UI.
 
-The key is** user interface shoud be side effect of data flow**.
+The key is **user interface shoud be side effect of data flow**.
 
 which means we should focus on business logic which is the core of our app. and let Frameworks care about UI.
 
