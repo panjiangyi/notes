@@ -1,4 +1,4 @@
-# UI should be side-effect of data flow.
+# UI should be a side-effect of data flow.
 
 As a frontend developer, when we create a app, we wrote business logic and UI logic.
 
@@ -8,9 +8,9 @@ But, for frontend developers, It's almost all our responsibility to wrote UI log
 
 so, What should we do, how can we get rid of this mess coming with UI.
 
-The key is** user interface shoud be side effect of data flow**.
+The key is **user interface shoud be side effect of data flow**.
 
-which means we should focus on business logic which is the core of our app. and let Frameworks care about UI.
+which means we should focus on business logic which is the core of our app. and let Frameworks care about keeping UI updated.
 
 This sounds normal, right? React, Vue has already did this. Yes. thouse frameworks can automatically update UI, when data changed. But mose developer didn't write code like this way.
 
@@ -40,8 +40,12 @@ the answer is **UI should be side effect of data flow**
 
 ## Think about a bussiness logic you have already wrote in a component and work perfect.
 
-but after some day your boss changed the design, another place need the same logic.
+but after some day your boss changed the UI design, another place need the same logic.
 
 what will you do?
 
 You may say that's alright. I'll move the logic in to a function ,and call anywhere.
+
+This is a good solution. But the problem is why you bussiness code should care about the changes of UI?
+
+Why not keep the messy UI logic away from our preciouse bussiness code?
