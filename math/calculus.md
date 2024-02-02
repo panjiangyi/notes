@@ -193,3 +193,18 @@ $$
 $$
 \frac{d}{dx}(\ln(x)) = \frac{1}{x}
 $$
+
+## 反函数
+
+反函数的导数：
+$$
+\frac{dy}{dx} =  \frac{1}{f'\left(y\right)}
+$$
+
+$$
+\frac{d}{dx}(\arcsin(x)) = \frac{1}{\sqrt{1 - x^2}}
+$$
+
+$$
+\frac{d}{dx}(\arccos(x)) = -\frac{1}{\sqrt{1 - x^2}}
+$$
